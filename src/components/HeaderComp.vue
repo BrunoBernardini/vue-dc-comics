@@ -5,16 +5,9 @@
         <img src="../assets/img/dc-logo.png" alt="">
       </div>
       <ul>
-        <li><a href="#">CHARACTERS</a></li>
-        <li><a class="active" href="#">COMICS</a></li>
-        <li><a href="#">MOVIES</a></li>
-        <li><a href="#">TV</a></li>
-        <li><a href="#">GAMES</a></li>
-        <li><a href="#">COLLECTIBLES</a></li>
-        <li><a href="#">VIDEOS</a></li>
-        <li><a href="#">FANS</a></li>
-        <li><a href="#">NEWS</a></li>
-        <li><a href="#">SHOP</a></li>
+        <li v-for="(option, index) in menu" :key="`menu-${index}`">
+          <a :class="{'active':option.isActive}" :href="option.href">{{option.name.toUpperCase()}}</a>
+        </li>
       </ul>
     </div>
   </header>
@@ -22,7 +15,63 @@
 
 <script>
 export default {
-  name: "HeaderComp"
+  name: "HeaderComp",
+  data(){
+    return{
+      menu: [
+        {
+          name: "characters",
+          href: "#",
+          isActive: false,
+        },
+        {
+          name: "comics",
+          href: "#",
+          isActive: true,
+        },
+        {
+          name: "movies",
+          href: "#",
+          isActive: false,
+        },
+        {
+          name: "tv",
+          href: "#",
+          isActive: false,
+        },
+        {
+          name: "games",
+          href: "#",
+          isActive: false,
+        },
+        {
+          name: "collectibles",
+          href: "#",
+          isActive: false,
+        },
+        {
+          name: "videos",
+          href: "#",
+          isActive: false,
+        },
+        {
+          name: "fans",
+          href: "#",
+          isActive: false,
+        },
+        {
+          name: "news",
+          href: "#",
+          isActive: false,
+        },
+        {
+          name: "shop",
+          href: "#",
+          isActive: false,
+        },
+      ]
+    }
+  }
 }
 </script>
 
