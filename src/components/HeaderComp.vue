@@ -79,7 +79,6 @@ export default {
   @import "../assets/style/vars";
   header{
     height: 118px;
-    background-color: aliceblue;
     font-size: 14px;
     .container{
       display: flex;
