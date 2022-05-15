@@ -87,7 +87,6 @@ export default {
       width: 80px;
     }
     ul{
-      list-style: none;
       display: flex;
       height: 100%;
       a{

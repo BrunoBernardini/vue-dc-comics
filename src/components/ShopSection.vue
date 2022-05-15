@@ -3,7 +3,7 @@
     <ul class="container">
       <li v-for="(item, index) in menu" :key="`menu-${index}`">
         <img :src="item.src" :alt="item.name">
-        <span>{{item.name.toUpperCase()}}</span>
+        <a :href="item.href">{{item.name.toUpperCase()}}</a>
       </li>
     </ul>
   </section>
@@ -23,23 +23,28 @@ export default {
       menu: [
         {
           src: DigitalComics,
-          name: "Digital comics"
+          name: "Digital comics",
+          href: "#"
         },
         {
           src: DCMerchandise,
-          name: "DC merchandise"
+          name: "DC merchandise",
+          href: "#"
         },
         {
           src: Subscription,
-          name: "Subscription"
+          name: "Subscription",
+          href: "#"
         },
         {
           src: ComicShopLocator,
-          name: "Comic shop locator"
+          name: "Comic shop locator",
+          href: "#"
         },
         {
           src: DCPowerVisa,
-          name: "DC power visa"
+          name: "DC power visa",
+          href: "#"
         },
       ]
     }
@@ -52,7 +57,6 @@ export default {
   section{
     height: 155px;
     background-color: $main-color;
-    color: white;
     .container{
       justify-content: space-around;
     }
@@ -65,6 +69,13 @@ export default {
         height: 100%;
         max-width: 55px;
         margin-right: 15px;
+      }
+      a{
+        text-decoration: none;
+        color: white;
+        &:hover{
+          text-decoration: underline;
+        }
       }
     }
   }
