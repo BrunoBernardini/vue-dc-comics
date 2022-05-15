@@ -61,7 +61,7 @@ export default {
       justify-content: space-around;
     }
     li{
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-family: $secondary-font;
       display: flex;
       align-items: center;
       height: 35%;

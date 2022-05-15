@@ -13,15 +13,33 @@
           </div>
         </div>
         <div class="logo-container">
-          <img src="../assets/img/dc-logo-bg.png" alt="">
+          <img src="../assets/img/dc-logo-bg.png" alt="DC Logo Background">
         </div>
       </div>
     </div>
-    <div class="bottom"></div>
+    <div class="bottom">
+      <div class="container">
+        <button><h3>SIGN-UP NOW!</h3></button>
+        <div class="socials-container">
+          <h3>FOLLOW US</h3>
+          <ul>
+            <li v-for="(social, index) in socials" :key="`social-${index}`">
+              <a :href="social.href"><img :src="social.src" :alt="social.name"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </footer>
 </template>
 
 <script>
+import Facebook from "../assets/img/footer-facebook.png";
+import Twitter from "../assets/img/footer-twitter.png";
+import YouTube from "../assets/img/footer-youtube.png";
+import Pinterest from "../assets/img/footer-pinterest.png";
+import Periscope from "../assets/img/footer-periscope.png";
+
 export default {
   name: "FooterComp",
   data(){
@@ -147,6 +165,33 @@ export default {
             }
           ]
         }
+      ],
+      socials: [
+        {
+          name: "Facebook",
+          src: Facebook,
+          href: "#"
+        },
+        {
+          name: "Twitter",
+          src: Twitter,
+          href: "#"
+        },
+        {
+          name: "YouTube",
+          src: YouTube,
+          href: "#"
+        },
+        {
+          name: "Pinterest",
+          src: Pinterest,
+          href: "#"
+        },
+        {
+          name: "Periscope",
+          src: Periscope,
+          href: "#"
+        },
       ]
     }
   }
@@ -154,6 +199,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import "../assets/style/vars";
   footer{
     color: white;
     .top{
@@ -200,6 +246,40 @@ export default {
     .bottom{
       height: 110px;
       background-color: #303030;
+      .container{
+        justify-content: space-between;
+      }
+      button{
+        color: white;
+        padding: 13px 14px;
+        background-color: transparent;
+        border: 2px solid $main-color;
+        font-family: $secondary-font;
+        cursor: pointer;
+        transition: all .15s linear;
+        h3{
+          font-size: 17px;
+        }
+        &:hover{
+          background-color: lightgray;
+          color: #303030;
+        }
+      }
+      .socials-container{
+        display: flex;
+        align-items: center;
+        h3{
+          font-size: 22px;
+          color: $main-color;
+          margin-right: 20px;
+        }
+      }
+      ul{
+        display: flex;
+        li{
+          margin: 9px;
+        }
+      }
     }
   }
 </style>
