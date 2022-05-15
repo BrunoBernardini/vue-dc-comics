@@ -81,10 +81,7 @@ export default {
     height: 118px;
     font-size: 14px;
     .container{
-      display: flex;
-      height: 100%;
       justify-content: space-between;
-      align-items: center;
     }
     .logo{
       width: 80px;
