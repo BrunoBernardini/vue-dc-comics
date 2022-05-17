@@ -1,21 +1,65 @@
 <template>
   <main>
+    <div class="jumbotron"/>
     <div class="container">
-      <h2>--> Content goes here &lt;--</h2>
+      <div class="topTag">current series</div>
+      <ul>
+        <li
+          v-for="(card, index) in cardsData"
+          :key="`card-${index}`">
+          <CardComp :card="card"/>
+        </li>
+      </ul>
     </div>
   </main>
 </template>
 
 <script>
+import cardsData from "../assets/data/cardsData";
+import CardComp from "./CardComp.vue";
 export default {
-  name: "MainComp"
+    name: "MainComp",
+    components: { CardComp },
+    data(){
+      return{
+        cardsData
+      }
+    }
 }
 </script>
 
 <style lang="scss" scoped>
+  @import "../assets/style/vars";
   main{
     background-color: #1c1c1c;
-    color: white;
-    height: 132px;
+    .jumbotron{
+      background-image: url("../assets/img/jumbotron.jpg");
+      height: 400px;
+    }
+    .container{
+      position: relative;
+      padding-top: 54px;
+      color: white;
+      ul{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        li{
+          width: calc((100% / 6) - 29px);
+          margin: 0 14px;
+        }
+      }
+    }
+    .topTag{
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-50%);
+      font-size: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      background-color: $main-color;
+      padding: 9px 17px
+    }
   }
 </style>
