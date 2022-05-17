@@ -64,7 +64,11 @@ export default {
       font-family: $secondary-font;
       display: flex;
       align-items: center;
-      height: 35%;
+      height: 48.75%;
+      border-radius: 15px;
+      padding: 10px;
+      transition: all .15s linear;
+      color: white;
       img{
         height: 100%;
         max-width: 55px;
@@ -73,9 +77,12 @@ export default {
       a{
         text-decoration: none;
         color: white;
-        &:hover{
-          text-decoration: underline;
-        }
+      }
+      &:hover{
+        transform: scale(1.1);
+        text-decoration: underline;
+        background-color: darken($main-color, 10%);
+        box-shadow: 0 0 10px black;
       }
     }
   }

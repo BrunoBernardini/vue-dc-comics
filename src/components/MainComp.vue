@@ -10,6 +10,7 @@
           <CardComp :card="card"/>
         </li>
       </ul>
+      <button><h3>load more</h3></button>
     </div>
   </main>
 </template>
@@ -40,6 +41,8 @@ export default {
       position: relative;
       padding-top: 54px;
       color: white;
+      justify-content: center;
+      flex-wrap: wrap;
       ul{
         display: flex;
         flex-wrap: wrap;
@@ -47,6 +50,24 @@ export default {
         li{
           width: calc((100% / 6) - 29px);
           margin: 0 14px;
+        }
+      }
+      button{
+        color: white;
+        padding: 10px 54px;
+        margin-bottom: 20px;
+        background-color: $main-color;
+        border: none;
+        font-family: $secondary-font;
+        cursor: pointer;
+        transition: all .15s linear;
+        h3{
+          font-size: 14px;
+          text-transform: uppercase;
+        }
+        &:hover{
+          background-color: lightgray;
+          color: #303030;
         }
       }
     }

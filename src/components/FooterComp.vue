@@ -273,6 +273,13 @@ export default {
           color: $main-color;
           margin-right: 20px;
         }
+        img{
+          transition: all .15s linear;
+          &:hover{
+            transform: scale(1.2);
+            filter: brightness(1.5);
+          }
+        }
       }
       ul{
         display: flex;
