@@ -35,6 +35,7 @@ export default {
     background-color: #1c1c1c;
     .jumbotron{
       background-image: url("../assets/img/jumbotron.jpg");
+      background-position: center;
       height: 400px;
     }
     .container{

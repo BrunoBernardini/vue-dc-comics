@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="thumb">
-      <img :src="card.thumb" :alt="`Price: ${card.price}; Type: ${card.type}`">
+      <img :src="card.thumb" :alt="`Series: ${card.series} Price: ${card.price}; Type: ${card.type}`">
     </div>
     <h4>{{card.series}}</h4>
   </div>
